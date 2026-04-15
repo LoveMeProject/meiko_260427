@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEIKO × NEXCUBE — 26년 4월 한국 방문</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F7F6F2;
+  --surface: #FFFFFF;
+  --border: #E2E0D8;
+  --text-primary: #1A1917;
+  --text-secondary: #6B6860;
+  --text-tertiary: #A09E9A;
+  --accent: #3B36C8;
+  --accent-light: #EEEDFE;
+  --accent-text: #3C3489;
+  --day1: #0C447C;
+  --day1-light: #E6F1FB;
+  --day2: #1A5C3A;
+  --day2-light: #EAF3DE;
+  --font-sans: 'Noto Sans KR', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--text-primary);
+  color: #fff;
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 39px,
+    rgba(255,255,255,.04) 39px,
+    rgba(255,255,255,.04) 40px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 39px,
+    rgba(255,255,255,.04) 39px,
+    rgba(255,255,255,.04) 40px
+  );
+}
+.hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -.02em;
+}
+.hero h1 span { color: #A3A0F8; }
+.hero-dates {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.date-pill {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 999px;
+  padding: 5px 16px;
+  color: rgba(255,255,255,.85);
+}
+
+/* ─── LAYOUT ─── */
+.container { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+.section { margin-bottom: 3rem; }
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  text-transform: none;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--accent-light);
+  border-radius: 2px;
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: .75rem;
+}
+
+/* ─── MEMBERS ─── */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .6rem;
+}
+.member-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.member-card:hover {
+  border-color: #A3A0F8;
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent-text);
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.member-name { font-size: 14px; font-weight: 700; }
+.member-name-en { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); }
+.member-role { font-size: 12px; color: var(--text-secondary); margin-top: 2px; line-height: 1.4; }
+
+/* ─── SCHEDULE ─── */
+.schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.day-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.day-header {
+  padding: .85rem 1.25rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.day-header.d1 { background: var(--day1); color: #fff; }
+.day-header.d2 { background: var(--day2); color: #fff; }
+.day-header-label { font-size: 14px; font-weight: 700; }
+.day-header-sub { font-size: 12px; opacity: .7; margin-top: 1px; }
+.day-icon { font-size: 18px; }
+.timeline { padding: .25rem 0; }
+.tl-item {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.tl-item:last-child { border-bottom: none; }
+.tl-time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  min-width: 56px;
+  padding: .6rem .75rem .6rem 1.25rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  padding-top: .65rem;
+}
+.tl-content { padding: .55rem .9rem; flex: 1; }
+.tl-title { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+.tl-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; line-height: 1.45; }
+
+/* ─── COMMA SESSIONS ─── */
+.comma-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.comma-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .15s;
+}
+.comma-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--accent);
+}
+.comma-card:hover { border-color: #A3A0F8; }
+.comma-tag {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--accent-text);
+  background: var(--accent-light);
+  padding: 4px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.comma-time { font-family: var(--font-mono); font-size: 15px; color: var(--text-secondary); font-weight: 500; margin-bottom: 8px; }
+.comma-title { font-size: 14px; font-weight: 700; margin-bottom: 5px; line-height: 1.4; }
+.comma-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 8px; }
+.comma-people { font-size: 12px; color: var(--text-tertiary); }
+.comma-people strong { color: var(--text-secondary); }
+
+/* ─── VENUE INFO ─── */
+.info-table { width: 100%; }
+.info-row {
+  display: flex;
+  gap: 12px;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-key {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  min-width: 90px;
+  padding-top: 1px;
+}
+.info-val { color: var(--text-primary); flex: 1; }
+.info-val .place {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ─── ATTENDANCE TABLE ─── */
+.attend-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.attend-table {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+  min-width: 700px;
+  table-layout: fixed;
+}
+.attend-table col.col-name { width: 88px; }
+.attend-table col.col-item { width: 86px; }
+.attend-table th {
+  background: var(--bg);
+  padding: 8px 6px;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.attend-table th:first-child { text-align: left; padding-left: 12px; }
+.attend-table td {
+  padding: 7px 6px;
+  border: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-primary);
+  overflow: hidden;
+}
+.attend-table td:first-child { text-align: left; font-weight: 500; padding-left: 12px; font-size: 13px; }
+.attend-table tr:nth-child(even) td { background: #FAFAF8; }
+.dot {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.attend-table tr.meiko-row td { background: #FFFBF0; }
+.attend-table tr.meiko-row td:first-child { color: #1A5C3A; }
+.attend-table tr.meiko-row .dot { background: #1A5C3A; }
+
+/* ─── STATS ─── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+  margin-bottom: 2rem;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .85rem 1rem;
+  text-align: center;
+}
+.stat-num { font-size: 28px; font-weight: 700; color: var(--accent); font-family: var(--font-mono); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--text-primary);
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .schedule-grid, .comma-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .member-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">NEXCUBE × MEIKO</div>
+    <h1>메이코 26년 4월<br><span>한국 방문 일정</span> 안내</h1>
+    <div class="hero-dates">
+      <div class="date-pill">4월 27일 (월)</div>
+      <div class="date-pill">4월 28일 (화)</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- MEMBERS -->
+  <div class="section">
+    <div class="section-label">방문단 명단 · MEIKO 8명</div>
+    <div class="member-grid">
+      <div class="member-card">
+        <div class="avatar">사이</div>
+        <div>
+          <div class="member-name">사이토 가츠키</div>
+          <div class="member-name-en">KATSUKI SAITOU</div>
+          <div class="member-role">명광의숙 본부장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">아사</div>
+        <div>
+          <div class="member-name">아사미즈 마사토</div>
+          <div class="member-name-en">MAHITO ASAMIZU</div>
+          <div class="member-role">명광의숙 부본부장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">엔도</div>
+        <div>
+          <div class="member-name">엔도 카즈야</div>
+          <div class="member-name-en">KAZUYA ENDOU</div>
+          <div class="member-role">IT 프로큐어먼트 부장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">오카</div>
+        <div>
+          <div class="member-name">오카 카즈키</div>
+          <div class="member-name-en">KAZUKI OKA</div>
+          <div class="member-role">정보시스템 부장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">이토</div>
+        <div>
+          <div class="member-name">이토 유스케</div>
+          <div class="member-name-en">YUUSUKE ITOU</div>
+          <div class="member-role">사업전략 실장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">이와</div>
+        <div>
+          <div class="member-name">이와모토 켄스케</div>
+          <div class="member-name-en">KENSUKE IWAMOTO</div>
+          <div class="member-role">오퍼레이션 부장</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">마츠</div>
+        <div>
+          <div class="member-name">마츠오 케이이치</div>
+          <div class="member-name-en">KEIICHI MATSUO</div>
+          <div class="member-role">동해 호쿠리쿠 컴퍼니 프레지던트</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="avatar">오쿠</div>
+        <div>
+          <div class="member-name">오쿠무라 나오키</div>
+          <div class="member-name-en">NAOKI OKUMURA</div>
+          <div class="member-role">미래교육개발실장</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="section">
+    <div class="section-label">전체 일정</div>
+    <div class="schedule-grid">
+      <div class="day-card">
+        <div class="day-header d1">
+          <div>
+            <div class="day-header-label">4월 27일 (월)</div>
+            <div class="day-header-sub">하네다 출발 → 대치점 방문</div>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">08:40</div>
+            <div class="tl-content"><div class="tl-title">하네다 출발</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:05</div>
+            <div class="tl-content"><div class="tl-title">김포 도착</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">12:00</div>
+            <div class="tl-content">
+              <div class="tl-title">롯데 시티호텔 구로</div>
+              <div class="tl-sub">체크인 및 이동</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:30</div>
+            <div class="tl-content"><div class="tl-title">대치점 집합</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:00</div>
+            <div class="tl-content">
+              <div class="tl-title">지점 방문 · 대치</div>
+              <div class="tl-sub">상담관리 프로그램 안내 · 공간 안내<br>에듀큐브 매니지먼트 사례 · Q&A</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">18:00~</div>
+            <div class="tl-content">
+              <div class="tl-title">저녁식사</div>
+              <div class="tl-sub">대치점 인근</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-header d2">
+          <div>
+            <div class="day-header-label">4월 28일 (화)</div>
+            <div class="day-header-sub">본사 회의 + 공덕2 지점 방문</div>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">10:00</div>
+            <div class="tl-content">
+              <div class="tl-title">본사 9층 교육장</div>
+              <div class="tl-sub">집합</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:00</div>
+            <div class="tl-content">
+              <div class="tl-title">A Comma — 1.5h</div>
+              <div class="tl-sub">AI 활용 기업 변화 + IT 업무 효율화</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00</div>
+            <div class="tl-content">
+              <div class="tl-title">점심식사</div>
+              <div class="tl-sub">본사 인근</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">14:00</div>
+            <div class="tl-content">
+              <div class="tl-title">B Comma · EDUCUBE — 2h</div>
+              <div class="tl-sub">업무 효율화 및 앱 구조</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">15:00</div>
+            <div class="tl-content">
+              <div class="tl-title">공덕2 지점 방문 (별도)</div>
+              <div class="tl-sub">고마츠바라 오너 · 홍지헌, 김미정, 정수아 담당</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:00</div>
+            <div class="tl-content">
+              <div class="tl-title">C Comma · CUBION — 0.5h</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">16:30</div>
+            <div class="tl-content">
+              <div class="tl-title">D Comma · 인커리지 — 1.5h</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">18:00~</div>
+            <div class="tl-content">
+              <div class="tl-title">저녁식사 (전체 합류)</div>
+              <div class="tl-sub">본사 인근</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMA SESSIONS -->
+  <div class="section">
+    <div class="section-label">4월 28일 논의 세션</div>
+    <div class="comma-grid">
+      <div class="comma-card">
+        <div class="comma-tag">A Comma</div>
+        <div class="comma-time">11:00~12:30 · 1.5h · IT 세션</div>
+        <div class="comma-title">AI를 활용한 기업의 모습 + IT 업무 효율화</div>
+        <div class="comma-desc">
+          A-1 [CEO] AI 활용 기업 변화 — n8n, AI집중의달, IT생산성 대회<br>
+          A-2 [IT 지준호] IT 조직변화 및 AI를 활용한 IT 개발 방식 변화 프로세스
+        </div>
+        <div class="comma-people"><strong>참석:</strong> 고승재 · 지준호 · 나호정 · 안은현 · 홍지헌 · 이승현 · 정수아</div>
+      </div>
+      <div class="comma-card">
+        <div class="comma-tag">B Comma</div>
+        <div class="comma-time">14:00~16:00 · 2h · IT 세션</div>
+        <div class="comma-title">EDUCUBE를 통한 업무 효율화 및 앱 구조</div>
+        <div class="comma-desc">
+          [IT 나호정] for 매니저 / for 학생<br>
+          실시간 연동 — 본사-원장-매니저-교실장-학생-학부모-튜터
+        </div>
+        <div class="comma-people"><strong>참석:</strong> 고승재 · 지준호 · 나호정 · 안은현 · 이재근 · 이승현</div>
+      </div>
+      <div class="comma-card">
+        <div class="comma-tag">C Comma</div>
+        <div class="comma-time">16:00~16:30 · 0.5h · IT 세션</div>
+        <div class="comma-title">CUBION 및 Q&A</div>
+        <div class="comma-desc">
+          [IT 지준호] 큐비온 업무 피드백<br>
+          AI Engine in EDUCUBE
+        </div>
+        <div class="comma-people"><strong>참석:</strong> 고승재 · 지준호 · 나호정 · 안은현 · 이승현</div>
+      </div>
+      <div class="comma-card">
+        <div class="comma-tag">D Comma</div>
+        <div class="comma-time">16:30~18:00 · 1.5h · HR+FC 세션</div>
+        <div class="comma-title">인커리지</div>
+        <div class="comma-desc">
+          Human Touch 관련 인커리지를 포함한 사례공유 및 디스커션
+        </div>
+        <div class="comma-people"><strong>참석:</strong> 고승재 · 안은현 · 이승현 · 장재연</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOMATSUBARA -->
+  <div class="section">
+    <div class="section-label">공덕2 지점 방문 · 고마츠바라 오너</div>
+    <div class="card">
+      <div class="info-table">
+        <div class="info-row">
+          <div class="info-key">방문자</div>
+          <div class="info-val">고마츠바라 오너 및 교실장 2분 (총 3분)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">한국 담당</div>
+          <div class="info-val">홍지헌 · 김미정 · 정수아</div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">15:00~17:00</div>
+          <div class="info-val">상담관리 및 개별지도 참관 + Q&A <span class="place">공덕2</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">17:00~17:40</div>
+          <div class="info-val">이동</div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">17:40~18:00</div>
+          <div class="info-val">본사 사무실 참관 및 추가 Q&A <span class="place">본사</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">18:00~</div>
+          <div class="info-val">저녁식사 — 메이코 본사분들 합류 <span class="place">미정</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATTENDANCE -->
+  <div class="section">
+    <div class="section-label">참석 현황</div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div class="attend-wrap">
+        <table class="attend-table">
+          <colgroup>
+            <col class="col-name">
+            <col class="col-item"><col class="col-item"><col class="col-item">
+            <col class="col-item"><col class="col-item"><col class="col-item">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>이름</th>
+              <th>4/27<br>대치 방문</th>
+              <th>4/27<br>저녁식사</th>
+              <th>4/28<br>본사 회의</th>
+              <th>4/28<br>점심</th>
+              <th>4/28<br>공덕2</th>
+              <th>4/28<br>저녁식사</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>고승재</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr><td>안은현</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr><td>김기태</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr><td>김태석</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td><td></td><td></td></tr>
+            <tr><td>홍지헌</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+            <tr><td>김미정</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+            <tr><td>지준호</td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr><td>나호정</td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+            <tr><td>이승현</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr><td>정수아</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>사이토</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>아사미즈</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>엔도</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>오카</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>이토</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>이와모토</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>마츠오</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>오쿠무라</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>고마츠바라</td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>교실장1</td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+            <tr class="meiko-row"><td>교실장2</td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding:.6rem 1.25rem;border-top:1px solid var(--border);display:flex;gap:16px;font-size:11px;color:var(--text-tertiary);">
+        <span><span class="dot" style="width:7px;height:7px;background:#1A5C3A;margin-right:5px;"></span>메이코</span>
+        <span><span class="dot" style="width:7px;height:7px;margin-right:5px;"></span>넥스큐브</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  NEXCUBE × MEIKO &nbsp;·&nbsp; 2026.04.27–28
+</footer>
+
+</body>
+</html>
